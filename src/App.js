@@ -1,14 +1,20 @@
 import React from 'react'
+import GlobalStyles from "./GlobalStyles";
 import Home from './components/Home'
-import Produtos from './components/Produtos'
+import Carrinho from './components/Carrinho'
 import Filtro from './components/Filtro'
 
-export default function App() {
-  return (
-    <div className="App">
-     <Home/>    
-     <Produtos/>
-     <Filtro/>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <GlobalStyles/>
+        <Home/>    
+        <Carrinho/>
+        <Filtro/>
+      </>
+    )
+  }
 }
+export default App;
