@@ -1,10 +1,17 @@
 import React from 'react'
+import styled from 'styled-components';
 
+const HomeBody = styled.div`
+display: flex;
+width: 100%;
+height: 70vh;
+border: 1px solid black;
+`
 
 class Home extends React.Component{
   render(){
     return(
-      <div>
+      <HomeBody>
         <div>
           <h3>Produtos</h3>
           <p>Quantidade de produtos</p>
@@ -20,7 +27,7 @@ class Home extends React.Component{
             <img src="https://picsum.photos/200/299"/>
           </div>
         </div>
-      </div>
+      </HomeBody>
     )
   }
 }
