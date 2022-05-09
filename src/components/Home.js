@@ -1,14 +1,109 @@
 import React from 'react'
 import styled from 'styled-components';
 
+//Estilização Body do Home.js
 const HomeBody = styled.div`
 display: flex;
 width: 100%;
-height: 70vh;
-border: 1px solid black;
+`
+// Estilização Grade dos produtos 
+const ProdutosHomeGrade = styled.div`
+width: 80%;
+height: 100%;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+gap: 50px;
+padding: 10px;
+`
+const ProdutosHomeCard = styled.div`
+box-shadow: 0 0 10px rgba(0,0,0,0.6);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+padding-bottom: 10px;
+`
+const TextoCard = styled.p`
+display: flex;
+justify-content: center;
+margin-top: 10px;
+`
+const ImgCard = styled.img`
+width: 100%;
+`
+const ButtonCard = styled.button`
+display: flex;
+margin: 0 auto;
+margin-top: 10px;
 `
 
 class Home extends React.Component{
+  
+  produtos = [{
+    id: 1,
+    name: "Foguete da Missão Apollo 11",
+    value: 10000.0,
+    imageUrl: "https://picsum.photos/200/200",
+  },
+  
+  {
+    id: 2,
+    name: "Foguete da Missão Apollo 12",
+    value: 12000.0,
+    imageUrl: "https://picsum.photos/200/201",
+  },
+
+  {
+    id: 3,
+    name: "Foguete da Missão Apollo 13",
+    value: 10400.0,
+    imageUrl: "https://picsum.photos/200/202",
+  },
+
+  {
+    id: 4,
+    name: "Foguete da Missão Apollo 14",
+    value: 20000.0,
+    imageUrl: "https://picsum.photos/200/203",
+  },
+
+  {
+    id: 5,
+    name: "Foguete da Missão Apollo 15",
+    value: 10550.0,
+    imageUrl: "https://picsum.photos/200/204",
+  },
+
+  {
+    id: 6,
+    name: "Foguete da Missão Apollo 16",
+    value: 101230.0,
+    imageUrl: "https://picsum.photos/200/205",
+  },
+
+  {
+    id: 7,
+    name: "Foguete da Missão Apollo 17",
+    value: 101200.0,
+    imageUrl: "https://picsum.photos/200/206",
+  },
+
+  {
+    id: 8,
+    name: "Foguete da Missão Apollo 18",
+    value: 10000.0,
+    imageUrl: "https://picsum.photos/200/207",
+  },
+  
+]
+  
+  retornarProdutos = this.produtos.map((produto) => {
+    return <ProdutosHomeCard>
+              <ImgCard src={produto.imageUrl}/>
+              <TextoCard >{produto.name}</TextoCard>
+              <TextoCard ><strong>R$: {produto.value}</strong></TextoCard>
+              <ButtonCard>Adicionar ao carrinho</ButtonCard>
+           </ProdutosHomeCard> 
+  })
+
   render(){
     return(
       <HomeBody>
@@ -21,12 +116,9 @@ class Home extends React.Component{
             <option value="DECRESCENTE">Decrescente</option>
           </select>
         </div>
-        <div>
-          <div>
-            <img src="https://picsum.photos/200/300"/>
-            <img src="https://picsum.photos/200/299"/>
-          </div>
-        </div>
+          <ProdutosHomeGrade>
+            {this.retornarProdutos}
+          </ProdutosHomeGrade>
       </HomeBody>
     )
   }
