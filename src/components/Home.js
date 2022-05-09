@@ -37,70 +37,70 @@ margin-top: 10px;
 
 class Home extends React.Component{
   
-  produtos = [{
-    id: 1,
-    name: "Foguete da Missão Apollo 11",
-    value: 10000.0,
-    imageUrl: "https://picsum.photos/200/200",
-  },
+  state = {
+    produtos : [{
+      id: 1,
+      name: "Foguete da Missão Apollo 11",
+      value: 10000.0,
+      imageUrl: "https://img.ltwebstatic.com/images3_pi/2022/04/02/1648866215a00dd8063a420616a6fa0cce0158e92b_thumbnail_600x.webp",
+    },
+    
+    {
+      id: 2,
+      name: "Foguete da Missão Apollo 12",
+      value: 12000.0,
+      imageUrl: "https://picsum.photos/200/201",
+    },
   
-  {
-    id: 2,
-    name: "Foguete da Missão Apollo 12",
-    value: 12000.0,
-    imageUrl: "https://picsum.photos/200/201",
-  },
-
-  {
-    id: 3,
-    name: "Foguete da Missão Apollo 13",
-    value: 10400.0,
-    imageUrl: "https://picsum.photos/200/202",
-  },
-
-  {
-    id: 4,
-    name: "Foguete da Missão Apollo 14",
-    value: 20000.0,
-    imageUrl: "https://picsum.photos/200/203",
-  },
-
-  {
-    id: 5,
-    name: "Foguete da Missão Apollo 15",
-    value: 10550.0,
-    imageUrl: "https://picsum.photos/200/204",
-  },
-
-  {
-    id: 6,
-    name: "Foguete da Missão Apollo 16",
-    value: 101230.0,
-    imageUrl: "https://picsum.photos/200/205",
-  },
-
-  {
-    id: 7,
-    name: "Foguete da Missão Apollo 17",
-    value: 101200.0,
-    imageUrl: "https://picsum.photos/200/206",
-  },
-
-  {
-    id: 8,
-    name: "Foguete da Missão Apollo 18",
-    value: 10000.0,
-    imageUrl: "https://picsum.photos/200/207",
-  },
+    {
+      id: 3,
+      name: "Foguete da Missão Apollo 13",
+      value: 10400.0,
+      imageUrl: "https://picsum.photos/200/202",
+    },
   
-]
+    {
+      id: 4,
+      name: "Foguete da Missão Apollo 14",
+      value: 20000.0,
+      imageUrl: "https://picsum.photos/200/203",
+    },
   
-  retornarProdutos = this.produtos.map((produto) => {
+    {
+      id: 5,
+      name: "Foguete da Missão Apollo 15",
+      value: 10550.0,
+      imageUrl: "https://picsum.photos/200/204",
+    },
+  
+    {
+      id: 6,
+      name: "Foguete da Missão Apollo 16",
+      value: 101230.0,
+      imageUrl: "https://picsum.photos/200/205",
+    },
+  
+    {
+      id: 7,
+      name: "Foguete da Missão Apollo 17",
+      value: 101200.0,
+      imageUrl: "https://picsum.photos/200/206",
+    },
+  
+    {
+      id: 8,
+      name: "Foguete da Missão Apollo 18",
+      value: 10000.0,
+      imageUrl: "https://picsum.photos/200/207",
+    },]
+  }
+
+  retornarProdutos = this.state.produtos.map((produto) => {
     return <ProdutosHomeCard>
               <ImgCard src={produto.imageUrl}/>
               <TextoCard >{produto.name}</TextoCard>
               <TextoCard ><strong>R$: {produto.value}</strong></TextoCard>
-              <ButtonCard>Adicionar ao carrinho</ButtonCard>
+              <ButtonCard onClick={this.adicionarCarrinho}>Adicionar ao carrinho</ButtonCard>
            </ProdutosHomeCard> 
   })
 
