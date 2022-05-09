@@ -8,7 +8,6 @@ flex-direction: column;
 padding: 10px;
 border: 1px solid black;
 `
-
 class Carrinho extends React.Component{
   render(){
     return(
