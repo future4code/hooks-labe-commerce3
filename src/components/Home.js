@@ -29,6 +29,7 @@ margin-top: 10px;
 `
 const ImgCard = styled.img`
 width: 100%;
+height: 70%;
 `
 const ButtonCard = styled.button`
 display: flex;
@@ -43,58 +44,58 @@ class Home extends React.Component{
     carrinho : [],
     produtos : [{
       id: 1,
-      name: "Foguete da Missão Apollo 11",
-      value: 1000,
-      imageUrl: "https://img.ltwebstatic.com/images3_pi/2022/04/02/1648866215a00dd8063a420616a6fa0cce0158e92b_thumbnail_600x.webp",
+      name: "Samba canção Astronauta",
+      value: 30.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/552271167/zoom/11.jpg",
     },
     
     {
       id: 2,
-      name: "Foguete da Missão Apollo 12",
-      value: 2000,
-      imageUrl: "https://picsum.photos/200/201",
+      name: "Camisa infantil Espaço",
+      value: 35.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/601193522/large/1.jpg",
     },
   
     {
       id: 3,
-      name: "Foguete da Missão Apollo 13",
-      value: 3000,
-      imageUrl: "https://picsum.photos/200/202",
+      name: "Camiseta UFO",
+      value: 45.69,
+      imageUrl: "https://img.lojasrenner.com.br/item/549031453/zoom/5.jpg",
     },
   
     {
       id: 4,
-      name: "Foguete da Missão Apollo 14",
-      value: 4000,
-      imageUrl: "https://picsum.photos/200/203",
+      name: "Camiseta OVNI",
+      value: 45.69,
+      imageUrl: "https://img.lojasrenner.com.br/item/559705010/zoom/10.jpg",
     },
   
     {
       id: 5,
-      name: "Foguete da Missão Apollo 15",
-      value: 5000,
-      imageUrl: "https://picsum.photos/200/204",
+      name: "Camiseta Galáxia",
+      value: 60.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/553182297/zoom/10.jpg",
     },
   
     {
       id: 6,
-      name: "Foguete da Missão Apollo 16",
-      value: 6000,
-      imageUrl: "https://picsum.photos/200/205",
+      name: "Camiseta Espacial",
+      value: 70.11,
+      imageUrl: "https://img.lojasrenner.com.br/item/558567292/zoom/10.jpg",
     },
   
     {
       id: 7,
-      name: "Foguete da Missão Apollo 17",
-      value: 7000,
-      imageUrl: "https://picsum.photos/200/206",
+      name: "Moletom Black Hole",
+      value: 130.99,
+      imageUrl: "https://img.elo7.com.br/product/original/2E444E6/moletom-com-capuz-unissex-galaxia-nebulosa-md03-buraco-negro.jpg",
     },
   
     {
       id: 8,
-      name: "Foguete da Missão Apollo 18",
-      value: 8000,
-      imageUrl: "https://picsum.photos/200/207",
+      name: "Moletom Abdução",
+      value: 131.99,
+      imageUrl: "https://images-americanas.b2w.io/produtos/2773101719/imagens/blusa-moletom-full-alien-nave-espacial/2773101735_1_large.jpg",
     },]
   }
 
