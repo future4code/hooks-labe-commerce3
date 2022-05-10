@@ -94,7 +94,7 @@ class Home extends React.Component{
     {
       id: 8,
       name: "Moletom Abdução",
-      value: 130.99,
+      value: 131.99,
       imageUrl: "https://images-americanas.b2w.io/produtos/2773101719/imagens/blusa-moletom-full-alien-nave-espacial/2773101735_1_large.jpg",
     },]
   }
