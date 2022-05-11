@@ -37,75 +37,74 @@ margin: 0 auto;
 margin-top: 10px;
 `
 
-const produtos = [{
-  id: 1,
-  name: "Calção Astronauta",
-  value: 30.99,
-  imageUrl: "https://img.lojasrenner.com.br/item/552271167/zoom/11.jpg",
-},
-
-{
-  id: 2,
-  name: "Camisa infantil Espaço",
-  value: 35.99,
-  imageUrl: "https://img.lojasrenner.com.br/item/601193522/large/1.jpg",
-},
-
-{
-  id: 3,
-  name: "Camiseta UFO",
-  value: 45.69,
-  imageUrl: "https://img.lojasrenner.com.br/item/549031453/zoom/5.jpg",
-},
-
-{
-  id: 4,
-  name: "Camiseta OVNI",
-  value: 45.69,
-  imageUrl: "https://img.lojasrenner.com.br/item/559705010/zoom/10.jpg",
-},
-
-{
-  id: 5,
-  name: "Camiseta Galáxia",
-  value: 60.99,
-  imageUrl: "https://img.lojasrenner.com.br/item/553182297/zoom/10.jpg",
-},
-
-{
-  id: 6,
-  name: "Camiseta Espacial",
-  value: 70.11,
-  imageUrl: "https://img.lojasrenner.com.br/item/558567292/zoom/10.jpg",
-},
-
-{
-  id: 7,
-  name: "Moletom Black Hole",
-  value: 130.99,
-  imageUrl: "https://img.elo7.com.br/product/original/2E444E6/moletom-com-capuz-unissex-galaxia-nebulosa-md03-buraco-negro.jpg",
-},
-
-{
-  id: 8,
-  name: "Moletom Abdução",
-  value: 131.99,
-  imageUrl: "https://images-americanas.b2w.io/produtos/2773101719/imagens/blusa-moletom-full-alien-nave-espacial/2773101735_1_large.jpg",
-},]
-
 class Home extends React.Component{
   
   state = {
     ordem : 'crescente',
+    carrinho : [],
+    produtos : [{
+      id: 1,
+      name: "Samba canção Astronauta",
+      value: 30.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/552271167/zoom/11.jpg",
+    },
+    
+    {
+      id: 2,
+      name: "Camisa infantil Espaço",
+      value: 35.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/601193522/large/1.jpg",
+    },
+  
+    {
+      id: 3,
+      name: "Camiseta UFO",
+      value: 45.69,
+      imageUrl: "https://img.lojasrenner.com.br/item/549031453/zoom/5.jpg",
+    },
+  
+    {
+      id: 4,
+      name: "Camiseta OVNI",
+      value: 45.69,
+      imageUrl: "https://img.lojasrenner.com.br/item/559705010/zoom/10.jpg",
+    },
+  
+    {
+      id: 5,
+      name: "Camiseta Galáxia",
+      value: 60.99,
+      imageUrl: "https://img.lojasrenner.com.br/item/553182297/zoom/10.jpg",
+    },
+  
+    {
+      id: 6,
+      name: "Camiseta Espacial",
+      value: 70.11,
+      imageUrl: "https://img.lojasrenner.com.br/item/558567292/zoom/10.jpg",
+    },
+  
+    {
+      id: 7,
+      name: "Moletom Black Hole",
+      value: 130.99,
+      imageUrl: "https://img.elo7.com.br/product/original/2E444E6/moletom-com-capuz-unissex-galaxia-nebulosa-md03-buraco-negro.jpg",
+    },
+  
+    {
+      id: 8,
+      name: "Moletom Abdução",
+      value: 131.99,
+      imageUrl: "https://images-americanas.b2w.io/produtos/2773101719/imagens/blusa-moletom-full-alien-nave-espacial/2773101735_1_large.jpg",
+    },]
   }
-
 
   renderizarTela = () => {
     if (this.state.ordem === 'crescente') {
         return this.state.produtos.map((produto,index) => {
           return <ProdutosHomeCard key={index}>
                     <ImgCard src={produto.imageUrl}/>
-                    <TextoCard><strong>{produto.name}</strong></TextoCard>
+                    <TextoCard>{produto.name}</TextoCard>
                     <TextoCard><strong>R$: {produto.value}</strong></TextoCard>
                     <ButtonCard>Adicionar ao carrinho</ButtonCard>
                   </ProdutosHomeCard> 
@@ -120,12 +119,12 @@ class Home extends React.Component{
                       <ImgCard src={prod.imageUrl}/>
                       <TextoCard >{prod.name}</TextoCard>
                       <TextoCard ><strong>R$: {prod.value}</strong></TextoCard>
-                      <ButtonCard onClick={ ()=> this.props.comprasCarrinho}>Adicionar ao carrinho</ButtonCard>
+                      <ButtonCard>Adicionar ao carrinho</ButtonCard>
                     </ProdutosHomeCard>
           }
         )
       }  
-  }
+    }
 
 onChangeOrdem = (event) => {
     this.setState({ordem : event.target.value})
