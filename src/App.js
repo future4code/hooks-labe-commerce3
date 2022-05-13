@@ -1,7 +1,6 @@
 import React from 'react'
 import GlobalStyles from "./GlobalStyles";
 import Home from './components/Home'
-import Carrinho from './components/Carrinho'
 import Filtro from './components/Filtro'
 import styled from 'styled-components';
 
@@ -9,6 +8,35 @@ const Body = styled.div`
 width: 100%;
 height: 100%;
 display: flex;
+`
+const Header = styled.div`
+display: flex;
+flex-direction: row-reverse;
+width: 100%;
+height: 15vh;
+background:linear-gradient(to right, cyan, darkblue); 
+`
+const TituloH1 = styled.h1`
+display: flex;
+height: 50%;
+align-items: center;
+margin: 0 auto;
+margin-top: 40px;
+color: white;
+padding: 10px;
+`
+const ImgHeader = styled.img`
+width: 10%;
+`
+const Footer = styled.div`
+width: 100%;
+height: 10vh;
+background-color: black;
+`
+const FooterP = styled.p`
+text-align: center;
+padding: 5px;
+color: white;
 `
 const produtos = [{
   id: 1,
@@ -19,7 +47,7 @@ const produtos = [{
 
 {
   id: 2,
-  name: "Camisa infantil Espaço",
+  name: "Camisa Espaço",
   value: 35.99,
   imageUrl: "https://img.lojasrenner.com.br/item/601193522/large/1.jpg",
 },
@@ -54,7 +82,7 @@ const produtos = [{
 
 {
   id: 7,
-  name: "Moletom Black Hole",
+  name: "Moletom Galáxia",
   value: 130.99,
   imageUrl: "https://img.elo7.com.br/product/original/2E444E6/moletom-com-capuz-unissex-galaxia-nebulosa-md03-buraco-negro.jpg",
 },
@@ -73,13 +101,21 @@ class App extends React.Component {
     
     return (
       <>
-        <Body>
-          <GlobalStyles/>
-          <Home
-            produtos={produtos}
-          />    
-          <Filtro/>
-        </Body>
+        <Header>
+          <TituloH1>Space Store</TituloH1>
+          <ImgHeader src='https://img.freepik.com/vetores-gratis/astronauta-bonito-montando-foguete-e-acenando-a-mao-dos-desenhos-animados-icone-ilustracao-conceito-de-icone-de-tecnologia-cientifica_138676-2130.jpg?t=st=1652475436~exp=1652476036~hmac=15ca76a427963223a3e1c192eb3b762d503db3a34ef8914e25bda30384e06a45&w=826'/>
+        </Header>
+          <Body>
+            <GlobalStyles/>
+            <Home
+              produtos={produtos}
+            />    
+            <Filtro/>
+          </Body>
+        <Footer>
+          <FooterP>Copyright © 2022 Todos direitos reservados.</FooterP>
+          <FooterP>Desenvolvido por Diogo - Leandro - Mizael</FooterP>
+        </Footer>
       </>
     )
   }

@@ -9,7 +9,7 @@ width: 100%;
 `
 // Estilização Grade dos produtos 
 const ProdutosHomeGrade = styled.div`
-width: 80%;
+width: 70%;
 height: 100%;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -23,11 +23,13 @@ box-shadow: 0 0 10px rgba(0,0,0,0.6);
 -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
 padding-bottom: 10px;
 background-color: white;
+height: 37vh;
 `
 const TextoCard = styled.p`
 display: flex;
 justify-content: center;
 margin-top: 10px;
+font-size: 12pt;
 `
 const ImgCard = styled.img`
 width: 100%;
@@ -36,7 +38,15 @@ height: 70%;
 const ButtonCard = styled.button`
 display: flex;
 margin: 0 auto;
-margin-top: 10px;
+margin-top: 7px;
+`
+
+const SectionProdutos = styled.div`
+display: flex;
+flex-direction: column;
+margin-left: 7px;
+margin-top: 5px;
+gap: 5px;
 `
 
 class Home extends React.Component{
@@ -90,7 +100,7 @@ class Home extends React.Component{
   render(){
     return(
       <HomeBody>
-        <div>
+        <SectionProdutos>
           <h3>Produtos</h3>
           <p>Preço dos produtos</p>
           <label>Ordem: </label>
@@ -98,7 +108,7 @@ class Home extends React.Component{
             <option value="crescente">Crescente</option>
             <option value="decrescente">Decrescente</option>
           </select>
-        </div>
+        </SectionProdutos>
           <ProdutosHomeGrade>
             {this.renderizarTela()}
           </ProdutosHomeGrade>
