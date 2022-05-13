@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Carrinho from './Carrinho';
 
 //Estilização Body do Home.js
 const HomeBody = styled.div`
@@ -41,7 +42,18 @@ margin-top: 10px;
 class Home extends React.Component{
   
   state = {
-    ordem : 'decrescente',
+    ordem : 'crescente',
+    carrinho : [] 
+  }
+
+  addProduto = () => {
+    return this.props.produtos.map((produto) => {
+      const nomeProduto = {name : produto.name}
+      const NovoCarrinho = [...this.state.carrinho, nomeProduto]
+      this.setState({carrinho : NovoCarrinho})
+      console.log(this.state.carrinho)
+      }
+    )
   }
 
   onChangeOrdem = (event) => {
@@ -54,8 +66,8 @@ class Home extends React.Component{
           return <ProdutosHomeCard key={i}>
                     <ImgCard src={produto.imageUrl}/>
                     <TextoCard><b>{produto.name}</b></TextoCard>
-                    <TextoCard><strong>R$: {produto.value}</strong></TextoCard>
-                    <ButtonCard>Adicionar ao carrinho</ButtonCard>
+                    <TextoCard><b>R$: {produto.value}</b></TextoCard>
+                    <ButtonCard onClick={this.addProduto}>Adicionar ao carrinho</ButtonCard>
                   </ProdutosHomeCard> 
           }
         )
@@ -67,8 +79,8 @@ class Home extends React.Component{
             return <ProdutosHomeCard key={i}>
                       <ImgCard src={prod.imageUrl}/>
                       <TextoCard >{prod.name}</TextoCard>
-                      <TextoCard ><strong>R$: {prod.value}</strong></TextoCard>
-                      <ButtonCard>Adicionar ao carrinho</ButtonCard>
+                      <TextoCard ><b>R$: {prod.value}</b></TextoCard>
+                      <ButtonCard onClick={this.addProduto}>Adicionar ao carrinho</ButtonCard>
                     </ProdutosHomeCard>
           }
         )
@@ -76,7 +88,6 @@ class Home extends React.Component{
     }
 
   render(){
-    console.log(this.state.ordem)
     return(
       <HomeBody>
         <div>
@@ -91,6 +102,10 @@ class Home extends React.Component{
           <ProdutosHomeGrade>
             {this.renderizarTela()}
           </ProdutosHomeGrade>
+
+          <Carrinho
+            carrinho={this.state.carrinho}
+          />
       </HomeBody>
     )
   }
