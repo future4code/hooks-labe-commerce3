@@ -68,23 +68,16 @@ const produtos = [{
 
 
 class App extends React.Component {
-  state = {
-    ordem : 'crescente',
-  }
-  
-  onChangeOrdem = (event) => {
-    this.setState({ordem : event.target.value})
-  }
 
   render() {
+    
     return (
       <>
         <Body>
           <GlobalStyles/>
           <Home
-          produtos={produtos}
+            produtos={produtos}
           />    
-          <Carrinho/>
           <Filtro/>
         </Body>
       </>
